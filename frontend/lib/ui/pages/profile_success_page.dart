@@ -2,8 +2,8 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
-class SignUpSuccessPage extends StatelessWidget {
-  const SignUpSuccessPage({super.key});
+class ProfileSuccessPage extends StatelessWidget {
+  const ProfileSuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {

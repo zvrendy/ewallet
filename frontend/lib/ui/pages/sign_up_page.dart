@@ -33,7 +33,6 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColor,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           // TODO: implement listener
@@ -43,7 +42,6 @@ class _SignUpPageState extends State<SignUpPage> {
           }
 
           if (state is AuthCheckEmailSuccess) {
-            // Navigator.pushNamed(context, '/sign-up-set-profile');
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -131,8 +129,6 @@ class _SignUpPageState extends State<SignUpPage> {
                       title: 'Continue',
                       onPressed: () {
                         if (validate()) {
-                          // Navigator.pushNamed(context, '/sign-up-set-profile');
-
                           context
                               .read<AuthBloc>()
                               .add(AuthCheckEmail(emailController.text));

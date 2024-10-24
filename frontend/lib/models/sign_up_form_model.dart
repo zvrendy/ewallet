@@ -26,13 +26,17 @@ class SignUpFormModel {
     };
   }
 
-  SignUpFormModel copyWith(
-          {String? pin, String? profilePicture, String? ktp}) =>
+  SignUpFormModel copyWith({
+    String? pin,
+    String? profilePicture,
+    String? ktp,
+  }) =>
       SignUpFormModel(
-          name: name,
-          email: email,
-          password: password,
-          pin: pin ?? this.pin,
-          profilePicture: profilePicture ?? this.profilePicture,
-          ktp: ktp ?? this.ktp);
+        name: name,
+        email: email,
+        password: password,
+        pin: pin ?? this.pin,
+        profilePicture: profilePicture ?? this.profilePicture,
+        ktp: ktp ?? this.ktp,
+      );
 }
