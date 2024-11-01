@@ -110,6 +110,7 @@ class ProfilePage extends StatelessWidget {
                         onTap: () async {
                           if (await Navigator.pushNamed(context, '/pin') ==
                               true) {
+                            if (!context.mounted) return;
                             Navigator.pushNamed(context, '/profile-edit');
                           }
                         },
@@ -120,7 +121,9 @@ class ProfilePage extends StatelessWidget {
                         onTap: () async {
                           if (await Navigator.pushNamed(context, '/pin') ==
                               true) {
-                            Navigator.pushNamed(context, '/profile-edit-pin');
+                            if (context.mounted) {
+                              Navigator.pushNamed(context, '/profile-edit-pin');
+                            }
                           }
                         },
                       ),

@@ -17,11 +17,13 @@ class PaymentMethodService {
           'Authorization': token,
         },
       );
-
       if (res.statusCode == 200) {
-        return List<PaymentMethodModel>.from(jsonDecode(res.body).map(
-                (paymentMethod) => PaymentMethodModel.fromJson(paymentMethod)))
-            .toList();
+        // print(res.body);
+        return List<PaymentMethodModel>.from(
+          jsonDecode(res.body).map(
+            (paymentMethod) => PaymentMethodModel.fromJson(paymentMethod),
+          ),
+        ).toList();
       } else {
         throw jsonDecode(res.body)['message'];
       }

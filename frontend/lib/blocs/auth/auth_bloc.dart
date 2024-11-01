@@ -37,7 +37,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         try {
           emit(AuthLoading());
           final user = await AuthService().register(event.data);
-
           emit(AuthSuccess(user));
         } catch (e) {
           emit(AuthFailed(e.toString()));
@@ -113,6 +112,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(AuthInitial());
         } catch (e) {
           emit(AuthFailed(e.toString()));
+        }
+      }
+
+      if (event is AuthUpdateBalance) {
+        if (state is AuthSuccess) {
+          final currentUser = (state as AuthSuccess).user;
+
+          final updatedUser = currentUser.copyWith(
+            balance: currentUser.balance! + event.amount,
+          );
+
+          emit(AuthSuccess(updatedUser));
         }
       }
     });

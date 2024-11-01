@@ -10,7 +10,7 @@ class PaymentMethodBloc extends Bloc<PaymentMethodEvent, PaymentMethodState> {
   PaymentMethodBloc() : super(PaymentMethodInitial()) {
     on<PaymentMethodEvent>((event, emit) async {
       // TODO: implement event handler
-      if (event is PaymentmethodGet) {
+      if (event is PaymentMethodGet) {
         try {
           emit(PaymentMethodLoading());
 

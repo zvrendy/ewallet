@@ -28,7 +28,6 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
 
   bool validate() {
     if (selectedImage == null) {
-      print(widget.data.toJson());
       return false;
     }
     return true;

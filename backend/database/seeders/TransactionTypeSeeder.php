@@ -19,6 +19,7 @@ class TransactionTypeSeeder extends Seeder
                 'name' => 'Transfer',
                 'code' => 'transfer',
                 'action' => 'dr',
+                'thumbnail' => 'transfer.png',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -26,6 +27,7 @@ class TransactionTypeSeeder extends Seeder
                 'name' => 'Internet',
                 'code' => 'internet',
                 'action' => 'dr',
+                'thumbnail' => 'internet.png',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -33,6 +35,7 @@ class TransactionTypeSeeder extends Seeder
                 'name' => 'Top Up',
                 'code' => 'top_up',
                 'action' => 'cr',
+                'thumbnail' => 'top_up.png',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -40,6 +43,7 @@ class TransactionTypeSeeder extends Seeder
                 'name' => 'Receive',
                 'code' => 'receive',
                 'action' => 'cr',
+                'thumbnail' => 'receive.png',
                 'created_at' => now(),
                 'updated_at' => now()
             ],

@@ -71,6 +71,8 @@ class TopUpController extends Controller
 
     private function callMidtrans(array $params)
     {
+        // Set Client Key
+        \Midtrans\Config::$clientKey = env('MIDTRANS_CLIENT_KEY');
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
